@@ -1,13 +1,13 @@
-package pbe.dataHora;
+package Web.PBE;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DataHoraApplication {
+public class PbeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DataHoraApplication.class, args);
+		SpringApplication.run(PbeApplication.class, args);
 	}
 
 }

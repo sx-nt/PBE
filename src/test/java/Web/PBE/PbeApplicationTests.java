@@ -1,10 +1,10 @@
-package pbe.dataHora;
+package Web.PBE;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DataHoraApplicationTests {
+class PbeApplicationTests {
 
 	@Test
 	void contextLoads() {

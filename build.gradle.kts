@@ -1,16 +1,22 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.5.4"
+	id("org.springframework.boot") version "3.5.5"
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
-group = "pbe"
+group = "Web"
 version = "0.0.1-SNAPSHOT"
-description = "Demo project for Spring Boot"
+description = "Projeto para disciplina de Programação BackEnd"
 
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom(configurations.annotationProcessor.get())
 	}
 }
 
@@ -19,18 +25,14 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	compileOnly("org.projectlombok:lombok")
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	runtimeOnly("org.postgresql:postgresql")
+	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    implementation ("org.hibernate.orm:hibernate-community-dialects")
-    implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation ("org.postgresql:postgresql")
-    implementation ("org.springframework.boot:spring-boot-starter-web")
-
-    // Lombok: para facilitar geração de código repetitivo
-    implementation ("org.projectlombok:lombok")
-    annotationProcessor ("org.projectlombok:lombok")
 }
 
 tasks.withType<Test> {
